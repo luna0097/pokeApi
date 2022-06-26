@@ -19,7 +19,7 @@
             android:id="@+id/ivPokemon"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@color/teal_700"
+            android:background="@color/P_Dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

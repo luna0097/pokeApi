@@ -20,10 +20,14 @@ class MainActivityViewModel: ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
 
     fun getPokemons(offset: Int) {
+        Log.d("TAG", "getPokemons: $offset")
         CoroutineScope(Dispatchers.IO).launch {
             isLoading.postValue(true)
             val call = pokeApi.getPokemons(20, offset)
             if (call.isSuccessful){
+                call.body()?.result?.forEach {
+                    Log.d("TAG", "getPokemons: $it")
+                }
                 call.body()?.result.let {
                     pokemonList.postValue(it)
                     isLoading.postValue(false)

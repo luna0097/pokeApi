@@ -15,6 +15,10 @@ import com.squareup.picasso.Picasso
 class RecyclerViewAdapter(val actionClick: (String) -> Unit) : RecyclerView.Adapter<RecyclerViewAdapter.Holder>() {
     private var pokemonList = mutableListOf<Pokemon>()
     fun setData(list: List<Pokemon>){
+        Log.e("TAG", "setData: _____________________________________________________________________", )
+        list.forEach {
+            Log.d("TAG", "setData: $it")
+        }
         pokemonList.addAll(list)
         notifyDataSetChanged()
     }
