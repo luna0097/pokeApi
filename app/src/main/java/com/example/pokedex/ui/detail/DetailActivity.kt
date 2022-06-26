@@ -1,5 +1,6 @@
 package com.example.pokedex.ui.detail
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,15 +29,16 @@ class DetailActivity : AppCompatActivity() {
         getPokemonData(pokemonName)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getPokemonData(name : String){
         viewModel.getPokemonInfo(name)
 
         viewModel.pokemonInfo.observe(this){ pokeInfo ->
             binding.tvName.text = pokeInfo.name
-            binding.tvPokemonId.text = "Id: ${pokeInfo.id.toString()}"
-            binding.tvAltura.text = "Altura: ${pokeInfo.height.toString()}"
-            binding.tvPeso.text = "Peso: ${pokeInfo.weight.toString()}"
-            binding.tvType.text = "Tipo: ${pokeInfo.types.map { it.type.name }.toString()}"
+            binding.tvPokemonId.text = "#${pokeInfo.id}"
+            binding.tvAltura.text = "Altura - ${pokeInfo.height}"
+            binding.tvPeso.text = "Peso - ${pokeInfo.weight}"
+            binding.tvType.text = "Tipo - ${pokeInfo.types.map { it.type.name }}"
             Picasso.get().load(pokeInfo.sprites.front_default).into(binding.ivFrontDefault)
             Picasso.get().load(pokeInfo.sprites.back_default).into(binding.ivBackDefault)
         }
