@@ -1,6 +1,5 @@
 package com.example.pokedex.ui.home.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,10 +14,6 @@ import com.squareup.picasso.Picasso
 class RecyclerViewAdapter(val actionClick: (String) -> Unit) : RecyclerView.Adapter<RecyclerViewAdapter.Holder>() {
     private var pokemonList = mutableListOf<Pokemon>()
     fun setData(list: List<Pokemon>){
-        Log.e("TAG", "setData: _____________________________________________________________________", )
-        list.forEach {
-            Log.d("TAG", "setData: $it")
-        }
         pokemonList.addAll(list)
         notifyDataSetChanged()
     }

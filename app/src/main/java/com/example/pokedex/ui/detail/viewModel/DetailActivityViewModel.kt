@@ -1,6 +1,5 @@
 package com.example.pokedex.ui.detail.viewModel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.pokedex.data.model.PokemonInfoApiResponse
@@ -26,7 +25,6 @@ class DetailActivityViewModel : ViewModel() {
                     pokemonInfo.postValue(it)
                     isLoading.postValue(false)
                 }
-                Log.d("TAG", "getPokemonInfo: ${call.body()}")
             }
         }
     }

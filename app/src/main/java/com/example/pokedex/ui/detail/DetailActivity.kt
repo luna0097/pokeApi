@@ -1,12 +1,9 @@
 package com.example.pokedex.ui.detail
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.core.view.isVisible
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.pokedex.databinding.ActivityDetailBinding
 import com.example.pokedex.ui.detail.viewModel.DetailActivityViewModel
